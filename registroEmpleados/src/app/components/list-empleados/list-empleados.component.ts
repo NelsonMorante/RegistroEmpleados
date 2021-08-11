@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
+import { EmpleadoService } from 'src/app/services/empleado.service';
 
 @Component({
   selector: 'app-list-empleados',
@@ -11,10 +12,26 @@ import { Observable } from 'rxjs';
 export class ListEmpleadosComponent implements OnInit {
   faEdit = faEdit;
   faTrashAlt = faTrashAlt;
-  constructor() {
+  empleados: any[]=[];
+  constructor(private _empleadoService:EmpleadoService) {
   }
 
   ngOnInit(): void {
+    this.getEmpleados()
+  }
+
+  getEmpleados(){
+    this._empleadoService.getEmpleados().subscribe(data =>{
+      this.empleados =[];
+      data.forEach((element:any)=>{
+        this.empleados.push({
+          id: element.payload.doc.id,
+          ...element.payload.doc.data()
+        })
+      });
+      console.log(this.empleados);
+      
+    });
   }
 
 }
