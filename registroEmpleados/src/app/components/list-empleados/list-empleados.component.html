@@ -5,8 +5,8 @@
         <span class="h3">Listado de Empleados</span>
         <button class="btn btn-dark btn-lg " routerLink="/create-empleado">Agregar</button>
       </div>
-
-      <table class="table table-striped mt-5">
+      <h5 style="margin-top: 30px" *ngIf="empleados.length == 0">No hay datos para mostrar</h5>
+      <table *ngIf="empleados.length > 0" class="table table-striped mt-5">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -25,12 +25,13 @@
             <td>{{empleado.nombre}}</td>
             <td>{{empleado.apellido}}</td>
             <td>{{empleado.documento}}</td>
-            <td>{{empleado.salario}}</td>
+            <td>{{empleado.salario | currency }}</td>
             <td>
               <fa-icon class="fas fa-lg text-info" [icon]="faEdit"></fa-icon>
             </td>
             <td>
-              <fa-icon class="fas fa-lg text-danger" [icon]="faTrashAlt"></fa-icon>
+              <fa-icon (click)="deleteEmpleado(empleado.id)" class="fas fa-lg text-danger" [icon]="faTrashAlt">
+              </fa-icon>
             </td>
           </tr>
 
