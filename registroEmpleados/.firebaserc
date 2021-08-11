@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "empleados-1eccf": {
+      "hosting": {
+        "registroEmpleados": [
+          "empleados-1eccf"
+        ]
+      }
+    }
+  }
+}

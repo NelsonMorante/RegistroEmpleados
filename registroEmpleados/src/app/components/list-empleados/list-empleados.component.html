@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <span class="h3">Listado de Empleados</span>
+        <button class="btn btn-dark btn-lg " routerLink="/create-empleado">Agregar</button>
+      </div>
+
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Documento</th>
+            <th>Salario</th>
+            <th>
+            </th>
+            <th>
+
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jaime</td>
+            <td>Martines</td>
+            <td>salario</td>
+            <td>10000bs</td>
+            <td>
+              <fa-icon class="fas fa-lg text-info" [icon]="faEdit"></fa-icon>
+            </td>
+            <td>
+              <fa-icon class="fas fa-lg text-danger" [icon]="faTrashAlt"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Pedro</td>
+            <td>Carpio</td>
+            <td>salario</td>
+            <td>1500bs</td>
+            <td>
+              <fa-icon class="fas fa-lg text-info" [icon]="faEdit"></fa-icon>
+            </td>
+            <td>
+              <fa-icon class="fas fa-lg text-danger" [icon]="faTrashAlt"></fa-icon>
+            </td>
+          </tr>
+          <tr>
+            <td>Teresa</td>
+            <td>Rodriges</td>
+            <td>salario</td>
+            <td>20000bs</td>
+            <td>
+              <fa-icon class="fas fa-lg text-info" [icon]="faEdit"></fa-icon>
+            </td>
+            <td>
+              <fa-icon class="fas fa-lg text-danger" [icon]="faTrashAlt"></fa-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
