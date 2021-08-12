@@ -6,10 +6,10 @@
           <div *ngIf="loading" class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
-          <h3>Agregar Empleado</h3>
+          <h3>{{title}}</h3>
           <span class="badge bg-danger" *ngIf="submitted && createEmpleado.invalid">TODOS LOS CAMPOS SON
             OBLIGATORIOS</span>
-          <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="agregarEmpleado()">
+          <form class="mt-4" [formGroup]="createEmpleado" (ngSubmit)="saveEditEmpleado()">
             <div class="row">
               <div class="col">
                 <input class="form-control form-control-lg" type="text" formControlName="nombre" placeholder="Nombre">

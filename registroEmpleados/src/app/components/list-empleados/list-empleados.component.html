@@ -27,7 +27,8 @@
             <td>{{empleado.documento}}</td>
             <td>{{empleado.salario | currency }}</td>
             <td>
-              <fa-icon class="fas fa-lg text-info" [icon]="faEdit"></fa-icon>
+              <fa-icon class="fas fa-lg text-info" [icon]="faEdit" [routerLink]="['/edit-empleado/', empleado.id]">
+              </fa-icon>
             </td>
             <td>
               <fa-icon (click)="deleteEmpleado(empleado.id)" class="fas fa-lg text-danger" [icon]="faTrashAlt">
